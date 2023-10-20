@@ -34,6 +34,8 @@ function Register()
   $comment = $_POST["comment"];
   $sql = "INSERT INTO users (name,email,phone,comment) values('$name','$email','$phone','$comment')";
   $conn->query($sql);
+  header("refresh:0, url=altas.php");
+  $conn->close();
 }
 
 function GetRegisters()
@@ -42,6 +44,7 @@ function GetRegisters()
   $sql = "SELECT * FROM users";
   global $result;
   $result = $conn->query($sql);
+  $conn->close();
 }
 
 function DeleteUser(){
@@ -60,6 +63,7 @@ function ModifyUser(){
   $sql = "UPDATE users SET name = '$nameToModify', email = '$emailToModify', 
   phone = '$phoneToModify', comment = '$commentToModify' WHERE ID_user = '$id'";
   $conn -> query($sql);
+  $conn->close();
   header("Location: consultas.php");
 }
 function GetUser(){
@@ -68,5 +72,6 @@ function GetUser(){
   $sql = "SELECT * FROM users where ID_user = $id";
   global $result;
   $result = $conn->query($sql);
+  $conn->close();
 }
 
