@@ -1,5 +1,6 @@
 <?php
     include("connection.php");
+    include("header.html");
     GetUser();
     $row = $result -> fetch_assoc();
 ?>
@@ -15,19 +16,21 @@
 </head>
 
 <body>
-    <form method="post" action="connection.php">
-        <label for="userID">User ID</label><br>
-        <input type="text" id="userID" name="IdToModify" value = <?php echo "$row[ID_user]"?> readonly><br>
-        <label for="name">Name</label><br>
-        <input type="text" id="name" name="nameToModify" value = <?php echo "$row[name]"?> required><br>
-        <label for="email">Email</label><br>
-        <input type="email" id="email" name="emailToModify" value= <?php echo "$row[email]"?> required><br>
-        <label for="phone">Phone</label><br>
-        <input type="text" id="phone" name="phoneToModify" value= <?php echo "$row[phone]"?> required><br>
-        <label for="comment">Comment</label><br>
-        <input type="text-area" id="comment" name="commentToModify" value= <?php echo "$row[comment]"?> required><br><br>
-        <input type="submit" name="update" value="Update">
-    </form>
+    <div class="container">
+        <form class ="form-control bg-black text-white" method="post" action="connection.php">
+            <label class="form-label mb-2 fs-4" for="userID">User ID</label>
+            <input class="form-control mb-2" type="text" id="userID" name="IdToModify" value = <?php echo "$row[ID_user]"?> readonly>
+            <label class="form-label mb-2 fs-4" for="name">Name</label>
+            <input class="form-control mb-2" type="text" id="name" name="nameToModify" value = <?php echo "$row[name]"?> required>
+            <label class="form-label mb-2 fs-4" for="email">Email</label>
+            <input class="form-control mb-2" type="email" id="email" name="emailToModify" value= <?php echo "$row[email]"?> required>
+            <label class="form-label mb-2 fs-4" for="phone">Phone</label>
+            <input class="form-control mb-2" type="text" id="phone" name="phoneToModify" value= <?php echo "$row[phone]"?> required>
+            <label class="form-label mb-2 fs-4" for="comment">Comment</label>
+            <input class="form-control mb-2" type="text-area" id="comment" name="commentToModify" value= <?php echo "$row[comment]"?> required>
+            <input class="btn btn-primary my-2" type="submit" name="update" value="Update">
+        </form>
+    </div>
 </body>
 
 </html>

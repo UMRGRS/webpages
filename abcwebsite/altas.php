@@ -1,3 +1,6 @@
+<?php
+include("header.html");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,17 +13,19 @@
 </head>
 
 <body>
-    <form method="post" action="connection.php">
-        <label for="name">Name</label><br>
-        <input type="text" id="name" name="name" required><br>
-        <label for="email">Email</label><br>
-        <input type="email" id="email" name="email" required><br>
-        <label for="phone">Phone</label><br>
-        <input type="text" id="phone" name="phone" required><br>
-        <label for="comment">Comment</label><br>
-        <input type="text-area" id="comment" name="comment" required><br><br>
-        <input type="submit" name="register" value="Register">
+<div class="container">
+    <form class="form-control bg-black text-white" method="post" action="connection.php">
+        <label class="form-label mb-2 fs-4" for="name">Name</label>
+        <input class="form-control mb-2" type="text" id="name" name="name" required>
+        <label class="form-label mb-2 fs-4" for="email">Email</label>
+        <input class="form-control mb-2" type="email" id="email" name="email" required>
+        <label class="form-label mb-2 fs-4" for="phone">Phone</label>
+        <input class="form-control mb-2" type="text" id="phone" name="phone" required>
+        <label class="form-label mb-2 fs-4" for="comment">Comment</label>
+        <input class="form-control mb-2" type="text-area" id="comment" name="comment" required>
+        <input class="btn btn-primary my-3" type="submit" name="register" value="Register">
     </form>
+</div>
 </body>
 
 </html>

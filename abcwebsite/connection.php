@@ -3,7 +3,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "abcdatabase";
-// Create connection
+// Create connection  
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
@@ -34,7 +34,7 @@ function Register()
   $comment = $_POST["comment"];
   $sql = "INSERT INTO users (name,email,phone,comment) values('$name','$email','$phone','$comment')";
   $conn->query($sql);
-  header("refresh:0, url=altas.php");
+  header("refresh:0, url=consultas.php");
   $conn->close();
 }
 

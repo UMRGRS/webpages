@@ -1,5 +1,6 @@
 <?php
 include("connection.php");
+include("header.html");
 GetRegisters();
 ?>
 <!DOCTYPE html>
@@ -13,8 +14,9 @@ GetRegisters();
     <title>Consult</title>
 </head>
 
-<table border="solid 1px">
-    <thead>
+<div class="container-fluid">
+<table class="table table-bordered">
+    <thead class="text-center">
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
@@ -31,13 +33,14 @@ GetRegisters();
         <td> {$row["email"]} </td> 
         <td> {$row["phone"]} </td> 
         <td> {$row["comment"]} </td>
-        <td> <a href=modify.php?idToGet=$row[ID_user]>Modify</a> </td>
-        <td> <a href=consultas.php?idToDelete=$row[ID_user]>Delete</a> </td>
+        <td class=text-center> <a class='btn btn-primary' href=modify.php?idToGet=$row[ID_user]>Modify</a> </td>
+        <td class=text-center> <a class='btn btn-danger' href=consultas.php?idToDelete=$row[ID_user]>Delete</a> </td>
         </tr>";
         ?>
-        
     <?php endfor; ?>
 </table>
+</div>
+
 
 <body>
 
